@@ -1,0 +1,26 @@
+{
+  "name": "mongoose-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanandrewson-401-advanced-javascript/mongoose-mongodb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evanandrewson-401-advanced-javascript/mongoose-mongodb/issues"
+  },
+  "homepage": "https://github.com/evanandrewson-401-advanced-javascript/mongoose-mongodb#readme"
+}
