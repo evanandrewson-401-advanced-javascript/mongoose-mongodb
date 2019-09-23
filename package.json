@@ -13,7 +13,7 @@
     "eslint": "^6.4.0"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "lint": "eslint **/*.js",
     "test": "jest --verbose --coverage",
     "test-watch": "jest --watchAll --verbose --coverage",
