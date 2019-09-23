@@ -30,5 +30,13 @@ describe('Wildcat model', () => {
     const { errors } = wildcat.validateSync();
     expect(errors.name.kind).toBe('required');
     expect(errors.weight.kind).toBe('required');
+  });
+  it('enforces min weight of 0', () => {
+    const data = {
+      weight: -1
+    };
+    const wildcat = new Wildcat(data);
+    const { errors } = wildcat.validateSync();
+    expect(errors.weight.kind).toBe('min'); 
   })
 });
