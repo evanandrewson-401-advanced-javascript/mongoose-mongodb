@@ -38,5 +38,13 @@ describe('Wildcat model', () => {
     const wildcat = new Wildcat(data);
     const { errors } = wildcat.validateSync();
     expect(errors.weight.kind).toBe('min'); 
-  })
+  });
+  it('enforces enum on size', () => {
+    const data = {
+      size: 'tiny'
+    };
+    const wildcat = new Wildcat(data);
+    const { errors } = wildcat.validateSync();
+    expect(errors.size.kind).toBe('enum');
+  });
 });
