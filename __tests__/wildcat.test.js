@@ -1,5 +1,4 @@
 const Wildcat = require('../lib/models/wildcat');
-const mongoose = require('mongoose');
 
 describe('Wildcat model', () => {
   it('validates model with all fields', () => {
