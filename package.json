@@ -13,11 +13,14 @@
     "eslint": "^6.4.0"
   },
   "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "jest": "jest",
+    "test": "npm run jest -- --coverage",
+    "test:watch": "npm run jest -- --watchAll",
+    "test:verbose": "npm run test -- --verbose",
     "start": "node server.js",
-    "lint": "eslint \"**/*.js\"",
-    "test": "jest --verbose --coverage",
-    "test-watch": "jest --watchAll --verbose --coverage",
-    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
+    "start:watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
