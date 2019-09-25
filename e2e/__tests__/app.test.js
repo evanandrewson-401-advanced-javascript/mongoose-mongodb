@@ -1,25 +1,23 @@
 const request = require('../request');
 
 describe('core app api', () => {
-  it('is alive', () => {
+  it('test route works', () => {
     return request
       .get('/hello')
       .expect(200)
       .then(res => {
-        expect(res.text).toBe('hello express');
+        expect(res.text).toBe('test route works');
       });
   });
-
-  it('returns 404 on non-api bad path', () => {
+  it('returns 404 error for non-api bad path', () => {
     return request
-      .get('/bad-path')
+      .get('/fakepath')
       .expect(404)
       .expect('Content-Type', /text/);
   });
-
   it('returns application/json 404 on bad api path', () => {
     return request
-      .post('/api/bad-path')
+      .get('/api/fakepath')
       .expect(404)
       .expect('Content-Type', /json/)
       .then(res => {
