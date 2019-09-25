@@ -59,7 +59,21 @@ describe('wildcats api', () => {
           .expect(200);
       })
       .then(({ body }) => {
-        expect(body.length).toBe(3)
+        expect(body.length).toBe(3);
+      });
+  });
+
+  it('updates a wildcat', () => {
+    return postWildcat(jaguar)
+      .then(result => {
+        result.size = 'Small';
+        return request
+          .put(`/api/wildcats/${result._id}`)
+          .send(result)
+          .expect(200);
+      })
+      .then(({ body }) => {
+        expect(body.size).toBe('Small');
       });
   });
 });
