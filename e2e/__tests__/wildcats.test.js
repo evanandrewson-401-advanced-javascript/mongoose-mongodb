@@ -46,4 +46,20 @@ describe('wildcats api', () => {
           });
       });
   });
+
+  it('gets the list of all wildcats', () => {
+    return Promise.all([
+      postWildcat(jaguar),
+      postWildcat(jaguar),
+      postWildcat(jaguar)
+    ])
+      .then(() => {
+        return request
+          .get('/api/wildcats')
+          .expect(200);
+      })
+      .then(({ body }) => {
+        expect(body.length).toBe(3)
+      });
+  });
 });
