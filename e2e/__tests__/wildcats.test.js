@@ -76,4 +76,13 @@ describe('wildcats api', () => {
         expect(body.size).toBe('Small');
       });
   });
+
+  it('deletes a wildcat', () => {
+    return postWildcat(jaguar)
+      .then(result => {
+        return request
+          .delete(`/api/wildcats/${result._id}`)
+          .expect(200);
+      });
+  });
 });
